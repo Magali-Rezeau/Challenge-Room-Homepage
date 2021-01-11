@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: $ff;
+  font-size: $fs-xs;
+  color: $text;
+  background-color: $white;
+}
+figure {
+  width: 100%;
+  height: 100%;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: $white;
+  text-transform: lowercase;
+  cursor: pointer;
+  @include md {
+    color: $black;
+  }
+}
+h1 {
+  font-weight: $fw-semi-bold;
+  font-size: $fs-l;
+  line-height: $lh-xl;
+  letter-spacing: $ls-negative-s;
+  color: $title;
+  margin-bottom: 1.375rem;
+  @include md {
+    font-size: $fs-m;
+    letter-spacing: $ls-negative-l;
+    line-height: $lh-l;
+  }
+  @include sm {
+    font-size: $fs-s;
+    line-height: $lh-m;
+  }
+}
+h2 {
+  color: $title;
+  font-weight: $fw-bold;
+  font-size: $fs-xs;
+  line-height: $lh-l;
+  letter-spacing: $ls-m;
+  text-transform: uppercase;
+  margin-bottom: .5625rem;
+}
+p {
+  font-weight: $fw-medium;
+  line-height: $lh-m;
+  letter-spacing: $ls-negative-m;
+  @include md {
+    line-height: $lh-m;
+  }
+}
+.attribution { 
+  font-size: 11px; text-align: center; 
+  & a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+   

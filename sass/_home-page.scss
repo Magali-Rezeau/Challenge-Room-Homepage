@@ -1,0 +1,254 @@
+.container {
+  width: 100%;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 58.33% 41.67%;
+  position: relative;
+
+  @include md {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 22rem;
+  }
+
+  @include sm {
+    margin-bottom: 1rem;
+  }
+
+  &:first-of-type {
+    display: none;
+  }
+
+  &:last-of-type {
+    display: none;
+  }
+
+  &-hero {
+    grid-column: 1/2;
+    position: relative;
+    height: 100%;
+
+    @include md {
+      grid-row: 1/2;
+    }
+
+    &-nav {
+      position: absolute;
+      width: 22.56rem;
+      height: .875rem;
+      left: 4rem;
+      top: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include md {
+        left: 1rem;
+        top: 3rem;
+      }
+
+      &.active {
+        top: 0;
+        height: 6.875rem;
+        background-color: $white;
+        width: 100%;
+        padding-left: 1rem;
+        left: 0;
+
+        & .header-hero-nav-list {
+          display: flex;
+        }
+      }
+
+      &-icon {
+        position: relative;
+        border: none;
+        background: none;
+        display: none;
+
+        @include md {
+          display: block;
+        }
+      }
+
+      &-logo {
+        @include md {
+          margin: 0 auto;
+        }
+      }
+
+      &-list {
+        width: 15.1875rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: $fs-xs;
+        font-weight: $fw-semi-bold;
+        line-height: $lh-xs;
+
+        @include md {
+          width: 80%;
+          justify-content: space-evenly;
+          display: none;
+        }
+
+        & li a {
+          position: relative;
+
+          &:before {
+            position: absolute;
+            transition: all 0.35s ease;
+            top: 1.2rem;
+            display: block;
+            height: .20rem;
+            width: 0%;
+            content: "";
+            background-color: $white;
+          }
+
+          &:hover:before {
+            opacity: 1;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &-slide {
+    grid-column: 2/3;
+    position: absolute;
+    bottom: 0;
+    width: 10rem;
+    height: 5rem;
+    background-color: $black;
+    display: flex;
+
+    @include md {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      right: 0;
+      width: 5rem;
+      height: 3.5rem;
+    }
+
+    &-right,
+    &-left {
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include md {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+
+      &:hover {
+        background-color: $grey-dark;
+      }
+    }
+  }
+
+  &-text {
+    grid-column: 2/3;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    @include md {
+      grid-column: 1/2;
+    }
+
+    &-box {
+      position: absolute;
+      width: 25rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include md {
+        width: 100%;
+        padding: 4.5rem 2rem;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
+
+      &-link {
+        width: 14.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        & a {
+          color: $black;
+          text-transform: uppercase;
+          font-weight: $fw-medium;
+          line-height: 1rem;
+          letter-spacing: .625rem;
+
+          &:hover {
+            color: $text;
+
+            & svg path {
+              fill: $text;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 29.17% 40.28% 30.55%;
+
+  @include md {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-img-left {
+    grid-column: 1/2;
+  }
+
+  &-text {
+    grid-column: 2/3;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    @include md {
+      position: initial;
+    }
+
+    &-box {
+      position: absolute;
+      width: 30.25rem;
+      height: 8.1875rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include md {
+        padding: 3.5rem 2rem;
+        position: initial;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
+    }
+  }
+
+  &-img-right {
+    grid-column: 3/4;
+  }
+}
